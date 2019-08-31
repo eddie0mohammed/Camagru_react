@@ -1,0 +1,13 @@
+.imgParrent {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+
+.imgContainer {
+	width: 30%;
+}
+
+.imgContainer > img {
+	width: 100%;
+}

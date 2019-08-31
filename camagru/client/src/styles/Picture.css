@@ -1,0 +1,47 @@
+.picture {
+	width: 90%;
+	margin: 20px auto;
+	text-align: center;
+	padding: 2em;
+	display: flex;
+	align-items: center;
+	position: relative;
+}
+
+.picture > img {
+	width: 100%;
+}
+
+.disput {
+	width: 90%;
+	margin: 20px auto;
+	text-align: center;
+	padding: 2em;
+	display: flex;
+	align-items: center;
+	position: relative;
+}
+
+.disput > .author {
+	position: absolute;
+	right: 1em;
+	bottom: 0;
+	color: #3f51b5;
+}
+
+.disput > .likes {
+	position: absolute;
+	right: 1em;
+	top: 0em;
+	color: green;
+}
+
+.delete {
+	position: absolute;
+	color: red;
+	top: 2em;
+	right: 2em;
+	background-color: #a83b19;
+	border-radius: 1em;
+	box-shadow: 0 0 32px rgba(0, 0, 0, 0.7);
+}

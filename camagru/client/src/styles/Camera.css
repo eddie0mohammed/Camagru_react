@@ -1,0 +1,72 @@
+.screenWrapper {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	margin-top: 1.3em;
+	margin-bottom: 3em;
+	position: relative;
+}
+
+.screenWrapper > .cameraButton {
+	position: absolute;
+	bottom: -20px;	
+}
+
+.screenWrapper > .saveButton {
+	position: absolute;
+	bottom: -40px;
+	right: 20px;
+	color: #4db6ac;
+	background-color: #00897b
+}
+
+.canvasWrapper {
+	width: 90%;
+	height: 100%;
+	position: relative;
+}
+
+.stickerWrapper {
+	margin-bottom: 2.32em;
+	min-height: 8vh;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	background-color: #3f51b5 !important;
+}
+
+#sticker {
+	width: 15%;
+	position: absolute;
+	top: -100px;
+	left: calc(-7.5%);
+	transition: transform 0.1s;
+	transform: translate3d(0, 0, 0);
+	pointer-events: none;
+}
+
+#sticker > div > img {
+	width: 100%;
+}
+
+.sticker {
+	width: 15%;
+}
+.sticker > img {
+	width: 100%;
+}
+
+.galleryWrapper {
+	padding: 1em;
+	min-height: 20vh;
+	text-align: center;
+}
+
+
+@media only screen and (min-width: 1400px) {
+	.screenWrapper {
+		width: 60%;
+		margin: 1.3em auto 3em;
+	
+	}
+}
