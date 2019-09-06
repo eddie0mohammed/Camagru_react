@@ -8,13 +8,15 @@ import axios from 'axios';
 const styles = {
 	Menu: {
 		marginLeft: -12,
-		marginRight: 20
+		marginRight: 20,
+		
 	},
 	Name: {
 		flexGrow: 1
 	},
 	Container: {
-		flexGrow: 1
+		flexGrow: 1,
+		
 	},
 	Links: {
 		color: "inherit",
@@ -70,14 +72,19 @@ export default class Header extends React.Component {
 		const {auth, authentificate} = this.props;
 		return (
 			<div style={styles.Container}>
-				<AppBar position="static">
+				<AppBar position="static" style={{background: '#333'}}>
 					<Toolbar>
 						<IconButton  color="inherit" aria-label="Menu" style={styles.Menu} component={Link} to="/profile">
 							<MenuIcon />
 						</IconButton>
 							<Typography variant="h6" color="inherit"  style={styles.Name}>
-								<Link to="/" style={{textDecoration:"none"}}>Camagaru</Link>
+								<Link to="/" style={{textDecoration:"none"}}><Button style={{color: 'white'}}>Take a picture</Button></Link>
 							</Typography>
+							
+							<Typography variant="h6" color="inherit"  style={styles.Name}>
+								CAMAGRU
+							</Typography>
+							
 							{auth ?
 								<React.Fragment>
 									<Typography variant="h6" color="inherit">
@@ -93,7 +100,7 @@ export default class Header extends React.Component {
 												Login
 										</Button>
 										<Button color="inherit" component={Link} to="/registration">	
-												Registration
+												Register
 										</Button>
 								</React.Fragment>
 							}

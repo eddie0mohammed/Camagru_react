@@ -5,10 +5,13 @@ import axios from "axios";
 
 const styles= {
 	Grid: {
-		marginTop: 20
+		margin: '150px auto',
+		// border: '1px solid black',
+		boxShadow: '1px 3px 20px -5px rgba(0,0,0,0.75)',
+		width: "50%",
 	},
 	textField: {
-		width: 200
+		width: 300
 	}
 }
 
@@ -19,33 +22,33 @@ export default class ForgotPassword extends Component {
 
 		this.state = { 
 			email: '',
-			password: '',
-			repassword: '',
+	
 		}
 	}
 
 	handleChange = (e)  => this.setState({[e.target.name]: e.target.value});
 
 	handleSend = async () => {
-		const {email, password} = this.state;
-		const response = await axios.post("http://localhost:6357/auth/forgot-password", {email, password});
+		const {email} = this.state;
+		const response = await axios.post("http://localhost:6357/auth/forgot-password", {email});
 		console.log('response ', response);
 		const {data: {success, err}} = response;
 		if (success)
 			this.props.history.push('/');
+		else
+			console.log(err);
 	}
 
 	render() {
 		return (
 			<Grid container alignItems="center" direction="column" style={styles.Grid}>
 			<Grid item>
-				<Typography variant="display1" >
-					Remind who are you?
+				<Typography variant="h6" style={{marginTop: '20px', padding: '10px 40px', color:'grey'}}>
+					We'll send you a link to reset your password
 				</Typography>
 			</Grid>
-			<Grid item>
+			<Grid item >
 				<TextField
-					id="standard-textarea"
 					label="Email"
 					placeholder="email"
 					style={styles.textField}
@@ -55,34 +58,8 @@ export default class ForgotPassword extends Component {
 					onChange={this.handleChange}
 				/>
 			</Grid>
-			<Grid item>
-						<TextField
-							error = {this.state.password !== this.state.repassword && this.state.repassword!==''}
-							id="standard-password-input"
-							label="New password"
-							style={styles.textField}
-							type="password"
-							name="password"
-							value={this.state.password}
-							onChange={this.handleChange}
-							autoComplete="current-password"
-							margin="normal"
-						/>
-					</Grid>
-					<Grid item>
-						<TextField
-							error = {this.state.password !== this.state.repassword}
-							label="Repeat-password"
-							style={styles.textField}
-							name="repassword"
-							value={this.state.repassword}
-							onChange={this.handleChange}
-							type="password"
-							autoComplete="current-password"
-							margin="normal"
-						/>
-					</Grid>
-			<Grid item>
+			
+			<Grid item style={{margin: '20px'}}>
 				<Button color="primary" onClick={this.handleSend}>
 					Send
 				</Button>

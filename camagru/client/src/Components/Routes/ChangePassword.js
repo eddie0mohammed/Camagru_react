@@ -4,10 +4,13 @@ import {Grid, TextField, Typography, Button} from '@material-ui/core';
 
 const styles= {
 	Grid: {
-		marginTop: 20
+		margin: '150px auto',
+		// border: '1px solid black',
+		boxShadow: '1px 3px 20px -5px rgba(0,0,0,0.75)',
+		width: "50%",
 	},
 	textField: {
-		width: 200
+		width: 300
 	}
 }
 
@@ -38,8 +41,8 @@ export default class ChangePassword extends Component {
 		return (
 			<Grid container alignItems="center" direction="column" style={styles.Grid}>
 			<Grid item>
-				<Typography variant="display1" >
-					Change you passphrase bellow
+				<Typography variant="h6" style={{marginTop: '20px', padding: '10px 40px', color:'grey'}}>
+					Enter your new password
 				</Typography>
 			</Grid>
 		
@@ -71,7 +74,7 @@ export default class ChangePassword extends Component {
 					/>
 				</Grid>
 			<Grid item>
-				<Button color="primary" onClick={this.handleSend}>
+				<Button color="primary" onClick={this.handleSend} style={{margin: '20px'}}>
 					Send
 				</Button>
 			</Grid>

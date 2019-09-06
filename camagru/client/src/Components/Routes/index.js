@@ -30,4 +30,4 @@ export default function Routes({auth, authentificate}) {
 			</Switch>
 		</React.Fragment>
 	);
-}
+} 
