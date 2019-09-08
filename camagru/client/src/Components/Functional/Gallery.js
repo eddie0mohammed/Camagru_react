@@ -63,11 +63,11 @@ class ShowCase extends Component {
 		const pictures = Object.values(images).sort((a, b) => {
 			const dateA = new Date(a.date).getTime();
 			const dateB = new Date(b.date).getTime();
-			return dateB-dateA;
+			return dateB - dateA;
 		});
 
 		return (
-			<Paper className="galleryWrapper">
+			<Paper className="galleryWrapper" style={{background: 'lightgrey'}}>
 				<div>
 					{pictures.length !== 0 ? 
 						<Gallery photos={pictures} onClick={this.handlePictureClick}/>

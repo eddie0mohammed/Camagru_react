@@ -33,10 +33,10 @@ class Sticker extends Component {
 	componentDidMount() {
 		const {image} = this.props;
 		this.elemRef = React.createElement('img', 
-																	{
-																		src: image,
-																		key:"sticker",
-																	});
+			{
+				src: image,
+				key:"sticker",
+			});
 
 		this.container = React.createElement('div', {"data-name": image}, [this.elemRef]);
 	}
@@ -60,10 +60,11 @@ export default class Stickers extends Component {
 
 		const stickersPath = [
 			'/stickers/sticker1.png',
-			'/stickers/sticker2.png',
+			// '/stickers/sticker2.png',
 			'/stickers/sticker3.png',
 			'/stickers/sticker4.png',
 			'/stickers/sticker5.png',
+			'/stickers/sticker6.png',
 		];
 		const stickerElems = stickersPath.map((sticker, index) => 
 		<div
@@ -71,7 +72,7 @@ export default class Stickers extends Component {
 				key={index}
 				onClick={() => this.selectSticker(sticker)}
 		>
-			<img src={sticker} alt="sticker" />
+			<img src={sticker} alt="sticker" style={{height: '200px', margin: '10px'}}/>
 		</div>
 		)
 

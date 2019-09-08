@@ -23,6 +23,7 @@ export default class Main extends Component {
 		const response = await axios('http://localhost:6357/auth/checkAuth');
 		const {data: {success}} = await response;
 		const options = {success, history: this.props.history};
+		// check auth
 		checkStatus(options);	
 		this.selectedSticker = document.querySelector("#sticker");
 	}

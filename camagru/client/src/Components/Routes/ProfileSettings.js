@@ -2,11 +2,14 @@ import React, { Component } from 'react'
 import axios from 'axios';
 
 
-import {Paper, Grid, TextField, Button, Typography} from '@material-ui/core';
+import {Grid, TextField, Button, Typography} from '@material-ui/core';
 import Checkbox from '@material-ui/core/Checkbox';
 const styles = {
 	Grid: {
-		marginTop: 20
+		margin: '150px auto',
+		// border: '1px solid black',
+		boxShadow: '1px 3px 20px -5px rgba(0,0,0,0.75)',
+		width: "50%",
 	}
 }
 
@@ -38,11 +41,15 @@ export default class ProfileSettings extends Component {
 
 	render() {
 		return (
-			<Paper>
+			
 				<Grid container alignItems="center" direction="column" style={styles.Grid}>
+				<Grid item>
+					<Typography variant="h6" style={{marginTop: '20px', padding: '10px 40px', color:'grey'}}>
+						Profile Settings
+					</Typography>
+				</Grid>
 					<Grid item>
 						<TextField
-						id="standard-textarea"
 						label="nickname"
 						placeholder="nickname"
 						style={styles.textField}
@@ -54,7 +61,6 @@ export default class ProfileSettings extends Component {
 					</Grid>	
 					<Grid item>
 						<TextField
-						id="standard-textarea"
 						label="email"
 						placeholder="email"
 						style={styles.textField}
@@ -66,7 +72,6 @@ export default class ProfileSettings extends Component {
 					</Grid>
 					<Grid item>
 						<TextField
-							id="standard-password-input"
 							label="Password"
 							placeholder="password"
 							style={styles.textField}
@@ -79,15 +84,14 @@ export default class ProfileSettings extends Component {
 						/>
 					</Grid>
 					<Grid item>
-						<Typography variant="body1"><Checkbox checked={this.state.isChecked} onChange={this.handleCheckBox}/> No email on comment</Typography>
+						<Typography variant="body1" style={{margin: '10px'}}><Checkbox checked={this.state.isChecked} onChange={this.handleCheckBox}/>Enable notifications via email</Typography>
 					</Grid>
 					<Grid item>
-						<Button color="primary" onClick={this.handleEdit} size="large">
-							Edit
+						<Button color="primary" onClick={this.handleEdit} size="large" style={{margin: '20px'}}>
+							Update
 						</Button>
 					</Grid>
 				</Grid>
-			</Paper>
 		)
 	}
 }

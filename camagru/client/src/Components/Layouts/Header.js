@@ -12,7 +12,8 @@ const styles = {
 		
 	},
 	Name: {
-		flexGrow: 1
+		flexGrow: 1,
+		marginLeft: '-40px',
 	},
 	Container: {
 		flexGrow: 1,
@@ -75,11 +76,14 @@ export default class Header extends React.Component {
 				<AppBar position="static" style={{background: '#333'}}>
 					<Toolbar>
 						<IconButton  color="inherit" aria-label="Menu" style={styles.Menu} component={Link} to="/profile">
-							<MenuIcon />
+							<MenuIcon style={{marginRight: '10px'}}/>
 						</IconButton>
 							<Typography variant="h6" color="inherit"  style={styles.Name}>
+								<Link to="/gallery" style={{textDecoration:"none"}}><Button style={{color: 'white'}}>Gallery</Button></Link>
 								<Link to="/" style={{textDecoration:"none"}}><Button style={{color: 'white'}}>Take a picture</Button></Link>
 							</Typography>
+
+							
 							
 							<Typography variant="h6" color="inherit"  style={styles.Name}>
 								CAMAGRU
